@@ -1,20 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-06 21:59:05.148553",
+ "creation": "2024-02-23 12:02:09.145006",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "landlord_name",
-  "column_break_adjg",
   "user"
  ],
  "fields": [
-  {
-   "fieldname": "landlord_name",
-   "fieldtype": "Data",
-   "label": "Landlord Name"
-  },
   {
    "fieldname": "user",
    "fieldtype": "Link",
@@ -22,18 +15,14 @@
    "label": "User",
    "options": "User",
    "reqd": 1
-  },
-  {
-   "fieldname": "column_break_adjg",
-   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-23 12:36:55.625953",
+ "modified": "2024-02-23 12:03:15.628401",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
- "name": "Owner",
+ "name": "Tenant",
  "owner": "Administrator",
  "permissions": [
   {

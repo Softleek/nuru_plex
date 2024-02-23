@@ -1,0 +1,32 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-23 12:08:07.439732",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ammenity"
+ ],
+ "fields": [
+  {
+   "fieldname": "ammenity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ammenity",
+   "options": "Ammenity",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-02-23 12:08:37.776474",
+ "modified_by": "Administrator",
+ "module": "Nuru Plex",
+ "name": "House Ammenity",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

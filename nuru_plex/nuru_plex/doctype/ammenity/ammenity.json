@@ -1,39 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-06 21:59:05.148553",
+ "creation": "2024-02-23 12:07:30.216106",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "landlord_name",
-  "column_break_adjg",
-  "user"
+  "section_break_5jv0"
  ],
  "fields": [
   {
-   "fieldname": "landlord_name",
-   "fieldtype": "Data",
-   "label": "Landlord Name"
-  },
-  {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "User",
-   "options": "User",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_adjg",
-   "fieldtype": "Column Break"
+   "fieldname": "section_break_5jv0",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-23 12:36:55.625953",
+ "modified": "2024-02-23 12:07:30.216106",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
- "name": "Owner",
+ "name": "Ammenity",
  "owner": "Administrator",
  "permissions": [
   {
