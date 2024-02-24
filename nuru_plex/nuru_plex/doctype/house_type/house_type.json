@@ -1,24 +1,28 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2024-02-23 12:06:51.195149",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_unfc"
+  "name1"
  ],
  "fields": [
   {
-   "fieldname": "section_break_unfc",
-   "fieldtype": "Section Break"
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-23 12:06:51.195149",
+ "modified": "2024-02-23 13:36:11.133800",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House Type",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
