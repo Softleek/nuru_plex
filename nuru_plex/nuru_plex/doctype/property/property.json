@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:property_name",
  "creation": "2024-02-06 21:51:59.447208",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,14 +12,19 @@
   "landlord",
   "section_break_abtu",
   "description",
-  "location",
-  "houses"
+  "location"
  ],
  "fields": [
   {
    "fieldname": "property_name",
    "fieldtype": "Data",
-   "label": "Property Name"
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Property Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "location",
@@ -39,14 +45,14 @@
   {
    "fieldname": "landlord",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Landlord",
-   "options": "Owner"
-  },
-  {
-   "fieldname": "houses",
-   "fieldtype": "Table",
-   "label": "Houses",
-   "options": "House"
+   "options": "Owner",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "column_break_mmui",
@@ -59,10 +65,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-23 12:39:54.394946",
+ "modified": "2024-03-13 13:28:44.016363",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "Property",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -82,6 +89,7 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "if_owner": 1,
    "print": 1,
    "read": 1,
    "report": 1,
