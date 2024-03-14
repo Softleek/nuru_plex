@@ -6,12 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "image",
-  "column_break_aorq",
   "link"
  ],
  "fields": [
   {
-   "fieldname": "link",
+   "fieldname": "image",
    "fieldtype": "Attach Image",
    "in_filter": 1,
    "in_preview": 1,
@@ -19,23 +18,17 @@
    "reqd": 1
   },
   {
-   "fieldname": "image",
+   "fieldname": "link",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
+   "hidden": 1,
+   "label": "link",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_aorq",
-   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-03-14 20:11:55.993389",
+ "modified": "2024-03-14 22:28:55.790159",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House Images",

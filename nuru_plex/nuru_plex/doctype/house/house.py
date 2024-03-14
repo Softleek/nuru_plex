@@ -14,20 +14,20 @@ from frappe.utils.file_manager import delete_file
 class House(Document):
     def before_save(self):
         for image_row in self.get("images"):
-            if not image_row.image:
+            if not image_row.link:
                 cloudinary.config(
                     cloud_name="dwlzooqso",
                     api_key="857659825572139",
                     api_secret="qeWb7SIa5AtWNGMHad3LriPp98Q",
                 )
                 localhost_url = frappe.utils.get_url()
-                file_path = f"{localhost_url}{image_row.link}"
+                file_path = f"{localhost_url}{image_row.image}"
                 upload_result = cloudinary.uploader.upload(
                     file_path, folder="house_images", use_filename=True
                 )
                 if upload_result.get("secure_url"):
-                    image_row.image = upload_result["secure_url"]
-                    delete_file(image_row.link)
                     image_row.link = upload_result["secure_url"]
+                    delete_file(image_row.image)
+                    image_row.image = upload_result["secure_url"]
                 else:
                     frappe.throw("Failed to upload image to Cloudinary")
