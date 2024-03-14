@@ -23,7 +23,7 @@ class House(Document):
                 localhost_url = frappe.utils.get_url()
                 file_path = f"{localhost_url}{image_row.image}"
                 upload_result = cloudinary.uploader.upload(
-                    file_path, folder="house_images", use_filename=True
+                    file_path, folder=f"house_images/{self.property}", use_filename=True
                 )
                 if upload_result.get("secure_url"):
                     image_row.link = upload_result["secure_url"]
