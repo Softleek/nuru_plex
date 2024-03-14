@@ -1,0 +1,64 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"QL9AT3CgUK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tenant Home</span>\",\"col\":12}},{\"id\":\"UCYU0ZRB2F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Available Houses\",\"col\":11}},{\"id\":\"8E7jksMXFv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Houses\",\"col\":3}},{\"id\":\"qGFlQw2aSS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"My Payments\",\"col\":3}}]",
+ "creation": "2024-03-13 12:16:28.044479",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 1,
+ "label": "Tenant Home",
+ "links": [],
+ "modified": "2024-03-13 17:41:34.473266",
+ "modified_by": "Administrator",
+ "module": "Nuru Plex",
+ "name": "Tenant Home",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Tenant"
+  },
+  {
+   "role": "All"
+  }
+ ],
+ "sequence_id": 28.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "My Houses",
+   "link_to": "House",
+   "stats_filter": "[[\"House\",\"tenant\",\"=\",\"frappe.session.user\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Available Houses",
+   "link_to": "House",
+   "stats_filter": "[[\"House\",\"status\",\"=\",\"Vacant\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "My Payments",
+   "link_to": "Rent Payment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Tenant Home"
+}
