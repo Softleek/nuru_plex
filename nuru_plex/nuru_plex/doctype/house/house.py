@@ -8,6 +8,7 @@ from frappe.model.document import Document
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from frappe.utils.file_manager import delete_file
 
 
 class House(Document):
@@ -26,5 +27,7 @@ class House(Document):
                 )
                 if upload_result.get("secure_url"):
                     image_row.image = upload_result["secure_url"]
+                    delete_file(image_row.link)
+                    image_row.link = upload_result["secure_url"]
                 else:
                     frappe.throw("Failed to upload image to Cloudinary")
