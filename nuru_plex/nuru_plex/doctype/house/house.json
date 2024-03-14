@@ -15,9 +15,7 @@
   "status",
   "rent_balance",
   "section_break_zgiw",
-  "attach_wurt",
-  "image",
-  "link"
+  "images"
  ],
  "fields": [
   {
@@ -95,24 +93,15 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "attach_wurt",
+   "fieldname": "images",
    "fieldtype": "Table",
    "label": "Images",
    "options": "House Images"
-  },
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach Image"
-  },
-  {
-   "fieldname": "link",
-   "fieldtype": "Data",
-   "label": "link"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-14 20:13:51.080876",
+ "modified": "2024-03-14 21:54:32.199416",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House",
