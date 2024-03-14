@@ -13,7 +13,11 @@
   "column_break_erxv",
   "property",
   "status",
-  "rent_balance"
+  "rent_balance",
+  "section_break_zgiw",
+  "attach_wurt",
+  "image",
+  "link"
  ],
  "fields": [
   {
@@ -85,11 +89,30 @@
    "label": "Property",
    "options": "Property",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zgiw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attach_wurt",
+   "fieldtype": "Table",
+   "label": "Images",
+   "options": "House Images"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "fieldname": "link",
+   "fieldtype": "Data",
+   "label": "link"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-13 12:53:17.838427",
+ "modified": "2024-03-14 20:13:51.080876",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House",
