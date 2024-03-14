@@ -14,6 +14,7 @@
   "property",
   "status",
   "rent_balance",
+  "size",
   "section_break_zgiw",
   "images"
  ],
@@ -97,11 +98,16 @@
    "fieldtype": "Table",
    "label": "Images",
    "options": "House Images"
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Data",
+   "label": "Size"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-14 21:54:32.199416",
+ "modified": "2024-03-15 00:27:00.461665",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House",
