@@ -3,24 +3,13 @@
 import frappe
 
 @frappe.whitelist(allow_guest=True)
-def houses_list(start=0, limit=4):
+def houses_list(start=0, limit=6):
     # Fetch unique houses based on property, type, rent_amount, and status = Vacant
-    total_houses = frappe.db.sql("""
-        SELECT
-            COUNT(DISTINCT h.name) as total_count
-        FROM
-            `tabHouse` h
-        INNER JOIN
-            `tabProperty` p ON h.property = p.name
-        WHERE
-            h.status = 'Vacant'
-    """, as_dict=True)[0]['total_count']
-
-    # Fetch subset of houses based on start and limit
-    houses = frappe.db.sql("""
+    unique_houses = frappe.db.sql("""
         SELECT
             h.name as house_id, h.property, h.type, h.rent_amount, h.status,
             p.description as property_description,
+            COUNT(h.name) as units,
             GROUP_CONCAT(DISTINCT i.image) as house_images
         FROM
             `tabHouse` h
@@ -31,11 +20,14 @@ def houses_list(start=0, limit=4):
         WHERE
             h.status = 'Vacant'
         GROUP BY
-            h.name, h.property, h.type, h.rent_amount, h.status, p.description
+            h.property, h.type, h.rent_amount, h.status, p.description
         LIMIT %s, %s
     """, (int(start), int(limit)), as_dict=True)
 
-    for house in houses:
+    # Fetch total count of unique houses
+    total_houses = len(unique_houses)
+
+    for house in unique_houses:
         if not house['house_images']:
             # If house images are empty, use property images
             property_images = frappe.get_all("House Images", filters={"parent": house['property']}, fields=["image"])
@@ -47,7 +39,7 @@ def houses_list(start=0, limit=4):
 
     return {
         "total_count": total_houses,
-        "houses": houses
+        "houses": unique_houses
     }
 
 
