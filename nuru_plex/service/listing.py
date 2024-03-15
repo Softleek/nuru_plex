@@ -81,7 +81,7 @@ def house_single(id):
         property_details = frappe.get_doc("Property", house.property)
 
         # Fetch property address
-        property_address = property_details.address
+        property_address = frappe.get_doc("Property Address", property_details.address )
 
         # Fetch owner (landlord) details
         owner_details = frappe.get_doc("Owner", property_details.landlord)
