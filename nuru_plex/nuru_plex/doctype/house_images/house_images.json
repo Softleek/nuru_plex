@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "label",
   "image",
   "link"
  ],
@@ -20,15 +21,28 @@
   {
    "fieldname": "link",
    "fieldtype": "Data",
-   "hidden": 1,
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "link",
    "read_only": 1
+  },
+  {
+   "default": "Image 1",
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Label"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-03-14 22:28:55.790159",
+ "modified": "2024-03-15 11:55:14.911226",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House Images",

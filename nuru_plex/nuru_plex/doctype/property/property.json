@@ -13,7 +13,8 @@
   "address",
   "section_break_abtu",
   "description",
-  "location"
+  "location",
+  "images"
  ],
  "fields": [
   {
@@ -67,12 +68,18 @@
    "fieldname": "address",
    "fieldtype": "Link",
    "label": "Address",
-   "options": "Address"
+   "options": "Property Address"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Table",
+   "label": "Images",
+   "options": "House Images"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-15 00:28:51.125350",
+ "modified": "2024-03-15 11:45:48.779477",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "Property",
