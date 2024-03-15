@@ -3,7 +3,27 @@
 import frappe
 
 @frappe.whitelist(allow_guest=True)
-def houses_list(start=0, limit=6):
+def houses_list(start=0, limit=6, filters=None):
+    # Parse filters if provided
+    if filters:
+        filters = frappe.parse_json(filters)
+    else:
+        filters = {}
+
+    # Fetch total count of unique houses (without limit)
+    total_houses_count = frappe.db.sql("""
+        SELECT
+            COUNT(DISTINCT h.name) as total_count
+        FROM
+            `tabHouse` h
+        INNER JOIN
+            `tabProperty` p ON h.property = p.name
+        LEFT JOIN
+            `tabHouse Images` i ON h.name = i.parent
+        WHERE
+            h.status = 'Vacant'
+    """, as_dict=True)[0]['total_count']
+
     # Fetch unique houses based on property, type, rent_amount, and status = Vacant
     unique_houses = frappe.db.sql("""
         SELECT
@@ -21,10 +41,12 @@ def houses_list(start=0, limit=6):
             h.status = 'Vacant'
         GROUP BY
             h.property, h.type, h.rent_amount, h.status, p.description
+        ORDER BY
+            h.rent_amount
         LIMIT %s, %s
     """, (int(start), int(limit)), as_dict=True)
 
-    # Fetch total count of unique houses
+    # Fetch total count of unique houses within limit
     total_houses = len(unique_houses)
 
     for house in unique_houses:
@@ -38,7 +60,7 @@ def houses_list(start=0, limit=6):
         house['amenities'] = [amenity['ammenity'] for amenity in amenities]
 
     return {
-        "total_count": total_houses,
+        "total_count": total_houses_count,
         "houses": unique_houses
     }
 
