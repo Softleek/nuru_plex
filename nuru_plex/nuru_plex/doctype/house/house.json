@@ -22,10 +22,6 @@
   {
    "fieldname": "house_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "House Name",
    "reqd": 1
   },
@@ -107,7 +103,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-15 00:27:00.461665",
+ "modified": "2024-03-15 13:44:40.487620",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "House",
