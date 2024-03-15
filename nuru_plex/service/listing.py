@@ -70,8 +70,38 @@ def houses_list(start=0, limit=6, filters=None):
 
 
 
+
 @frappe.whitelist(allow_guest=True)
 def house_single(id):
+    # Fetch details of the house with the provided name
+    house = frappe.get_doc("House", id)
+
+    if house:
+        # Fetch property details associated with the house
+        property_details = frappe.get_doc("Property", house.property)
+
+        # Fetch property address
+        property_address = property_details.address
+
+        # Fetch owner (landlord) details
+        owner_details = frappe.get_doc("Owner", property_details.landlord)
+
+        # Return house, property, property address, and owner details as dictionaries
+        return {
+            "house": house.as_dict(),
+            "property": property_details.as_dict(),
+            "property_address": property_address,
+            "owner": owner_details.as_dict(),
+            "featured_property": houses_list(start=0, limit=6)
+        }
+    else:
+        return "House not found"
+
+
+
+
+# @frappe.whitelist(allow_guest=True)
+# def house_single(id):
     # Fetch details of the house with the provided name
     house = frappe.db.sql("""
         SELECT
