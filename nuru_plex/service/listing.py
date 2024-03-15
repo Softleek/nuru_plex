@@ -39,7 +39,7 @@ def houses_list(start=0, limit=4):
         if not house['house_images']:
             # If house images are empty, use property images
             property_images = frappe.get_all("House Images", filters={"parent": house['property']}, fields=["image"])
-            house['house_images'] = [img['image_link'] for img in property_images]
+            house['house_images'] = [img['link'] for img in property_images]
 
         # Fetch amenities for the property
         amenities = frappe.get_all("House Ammenity", filters={"parent": house['property']}, fields=["ammenity"])
@@ -74,7 +74,7 @@ def house_single(id):
         if not house['house_images']:
             # If house images are empty, use property images
             property_images = frappe.get_all("House Images", filters={"parent": house['property']}, fields=["image"])
-            house['house_images'] = [img['image_link'] for img in property_images]
+            house['house_images'] = [img['image'] for img in property_images]
 
         # Fetch amenities for the property
         amenities = frappe.get_all("House Ammenity", filters={"parent": house['property']}, fields=["ammenity"])
