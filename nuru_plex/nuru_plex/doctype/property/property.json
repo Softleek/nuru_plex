@@ -10,9 +10,11 @@
   "amenities",
   "column_break_mmui",
   "landlord",
+  "address",
   "section_break_abtu",
   "description",
-  "location"
+  "location",
+  "images"
  ],
  "fields": [
   {
@@ -61,11 +63,23 @@
   {
    "fieldname": "section_break_abtu",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Property Address"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Table",
+   "label": "Images",
+   "options": "House Images"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-13 13:28:44.016363",
+ "modified": "2024-03-15 11:45:48.779477",
  "modified_by": "Administrator",
  "module": "Nuru Plex",
  "name": "Property",
