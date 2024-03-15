@@ -13,7 +13,10 @@ def houses_list(start=0, limit=6, filters=None):
     # Fetch total count of unique houses (without limit)
     total_houses_count = frappe.db.sql("""
         SELECT
-            COUNT(DISTINCT h.name) as total_count
+            h.name as house_id, h.property, h.type, h.rent_amount, h.status,
+            p.description as property_description,
+            COUNT(h.name) as units,
+            GROUP_CONCAT(DISTINCT i.image) as house_images
         FROM
             `tabHouse` h
         INNER JOIN
@@ -22,6 +25,10 @@ def houses_list(start=0, limit=6, filters=None):
             `tabHouse Images` i ON h.name = i.parent
         WHERE
             h.status = 'Vacant'
+        GROUP BY
+            h.property, h.type, h.rent_amount, h.status, p.description
+        ORDER BY
+            h.rent_amount
     """, as_dict=True)[0]['total_count']
 
     # Fetch unique houses based on property, type, rent_amount, and status = Vacant
